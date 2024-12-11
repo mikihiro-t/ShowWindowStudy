@@ -1,0 +1,99 @@
+﻿<Window
+    x:Class="ShowWindowStudy.MainView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ShowWindowStudy"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    d:DataContext="{d:DesignInstance Type=local:MainViewModel}"
+    Closed="Window_Closed"
+    mc:Ignorable="d">
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+            <Label FontSize="16" FontWeight="Bold">Viewのコードビハインド</Label>
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    Width="100"
+                    Height="30"
+                    Click="Button_Click">
+                    表示する
+                </Button>
+                <Label>View上で表示</Label>
+
+            </StackPanel>
+
+            <StackPanel
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Button
+                    Width="100"
+                    Height="30"
+                    Command="{Binding ShowWindowCommand}"
+                    Content="表示する" />
+                <Label>Actionを利用して、ViewModelからViewのメソッドを呼び出す</Label>
+
+            </StackPanel>
+
+            <Label
+                Margin="0,20,0,0"
+                FontSize="16"
+                FontWeight="Bold">
+                DIの、Serviceで処理（特定のウインドウを表示するメソッド）
+            </Label>
+            <StackPanel
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Button
+                    Width="100"
+                    Height="30"
+                    Command="{Binding ShowMainViewCommand}"
+                    Content="表示する" />
+                <Label>ViewModel上で表示</Label>
+            </StackPanel>
+
+            <StackPanel
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Button
+                    Width="100"
+                    Height="30"
+                    Command="{Binding ShowMainViewOnModelCommand}"
+                    Content="表示する" />
+                <Label>Model上で表示</Label>
+            </StackPanel>
+
+            <Label
+                Margin="0,20,0,0"
+                FontSize="16"
+                FontWeight="Bold">
+                DIの、Serviceで処理（ジェネリックメソッド）
+            </Label>
+            <StackPanel
+                Height="30"
+                Margin="0,10,0,0"
+                Orientation="Horizontal">
+                <Button
+                    Width="100"
+                    Height="30"
+                    Click="ShowMainViewGenericButton_Click"
+                    Content="表示する" />
+                <Label>View上で表示</Label>
+            </StackPanel>
+
+
+
+
+
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>
